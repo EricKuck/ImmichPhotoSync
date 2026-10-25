@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.immich-photo-sync.cli</string>
+	<key>CFBundleName</key>
+	<string>immich-photo-sync</string>
+	<key>CFBundleExecutable</key>
+	<string>immich-photo-sync</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>immich-photo-sync reads your Photos library to upload photos, videos and albums to your Immich server.</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>immich-photo-sync connects to your Immich server, which may be on your local network.</string>
+</dict>
+</plist>

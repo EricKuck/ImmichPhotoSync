@@ -1,0 +1,44 @@
+[package]
+name = "immich-photo-sync"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "Headless macOS daemon that syncs the Apple Photos library (originals and edits, images and videos, albums) to an Immich server"
+license = "MIT"
+
+[[bin]]
+name = "immich-photo-sync"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive", "env"] }
+log = "0.4"
+env_logger = "0.11"
+rusqlite = { version = "0.41", features = ["bundled"] }
+reqwest = { version = "0.13", default-features = false, features = ["blocking", "json", "multipart", "rustls", "stream"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha1 = "0.11"
+hex = "0.4"
+chrono = "0.4"
+humantime = "2"
+gethostname = "1"
+dirs = "7"
+block2 = "0.6"
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", features = ["NSArray", "NSString", "NSDate", "NSError", "NSObject", "NSEnumerator", "NSSortDescriptor", "NSData", "NSDictionary"] }
+objc2-photos = { version = "0.3", features = ["objc2-image-io", "PHAsset", "PHAssetResource", "PHAssetResourceManager", "PHImageManager", "PHFetchResult", "PHFetchOptions", "PHCollection", "PHPhotoLibrary", "PHChange", "PHObject", "PhotosTypes", "block2"] }
+objc2-uniform-type-identifiers = { version = "0.3", features = ["UTType"] }
+objc2-image-io = { version = "0.3", features = ["CGImageProperties"] }
+mime_guess = "2"
+ctrlc = { version = "3", features = ["termination"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+
+[dev-dependencies]
+mockito = "1"
+tempfile = "3"
